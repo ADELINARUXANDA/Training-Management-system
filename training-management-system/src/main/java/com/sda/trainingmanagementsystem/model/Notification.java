@@ -2,21 +2,30 @@ package com.sda.trainingmanagementsystem.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.ArrayList;
 
 @Entity
 @Table (name="Notification")
 public class Notification {
 
-    private Classes classes;
+    @OneToOne
+    private User userGiven;
+
+    @OneToMany
+    private ArrayList<Classes> classes;
+    @OneToMany
+    private ArrayList<UserNotifications> notificationsArrayList;
     private String subject;
     private String contents;
 
-    public Classes getClasses() {
+    public ArrayList<Classes> getClasses() {
         return classes;
     }
 
-    public void setClasses(Classes classes) {
+    public void setClasses(ArrayList<Classes> classes) {
         this.classes = classes;
     }
 

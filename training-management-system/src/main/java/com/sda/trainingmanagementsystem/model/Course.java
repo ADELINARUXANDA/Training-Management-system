@@ -2,17 +2,21 @@ package com.sda.trainingmanagementsystem.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.ArrayList;
 
 @Entity
-@Table(name="Course")
+@Table(name = "Course")
 public class Course {
 
     private String name;
-    private ClassUnit classUnit;
-@OneToOne
-private ParticipantRegistration participantRegistration;
+    @OneToMany
+
+    private ArrayList<ClassUnit> classUnits;
+    @OneToOne
+    private ParticipantRegistration participantRegistration;
 
     public String getName() {
         return name;
@@ -22,11 +26,11 @@ private ParticipantRegistration participantRegistration;
         this.name = name;
     }
 
-    public ClassUnit getClassUnit() {
-        return classUnit;
+    public ArrayList<ClassUnit> getClassUnits() {
+        return classUnits;
     }
 
-    public void setClassUnit(ClassUnit classUnit) {
-        this.classUnit = classUnit;
+    public void setClassUnits(ArrayList<ClassUnit> classUnits) {
+        this.classUnits = classUnits;
     }
 }

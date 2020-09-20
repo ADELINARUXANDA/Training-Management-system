@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Teachers")
+@Table(name="AccountsTeachers")
 public class Teachers {
     private String name;
 }

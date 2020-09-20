@@ -11,12 +11,16 @@ public class User {
 private Long id;
 private String login;
 private String password;
-private String Admin;
+
+@Enumerated(EnumType.STRING)
+private Type type;
 private String first_name;
 private String last_name;
 private String active_status;
 @OneToOne
 private UserNotifications userNotifications;
+@OneToOne
+private Course course;
 
     public Long getId() {
         return id;
@@ -40,14 +44,6 @@ private UserNotifications userNotifications;
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getAdmin() {
-        return Admin;
-    }
-
-    public void setAdmin(String admin) {
-        Admin = admin;
     }
 
     public String getFirst_name() {

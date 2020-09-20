@@ -1,22 +1,28 @@
 package com.sda.trainingmanagementsystem.model;
 
-public class UserNotifications {
-    private Notification readNotifications;
-    private Notification unreadNotifications;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import java.util.ArrayList;
 
-    public Notification getReadNotifications() {
+public class UserNotifications<Arraylist> {
+    @OneToMany
+    private Arraylist<Notification> readNotifications;
+    @OneToMany
+    private ArrayList<Notification> unreadNotifications;
+
+    public Arraylist<Notification> getReadNotifications() {
         return readNotifications;
     }
 
-    public void setReadNotifications(Notification readNotifications) {
+    public void setReadNotifications(Arraylist<Notification> readNotifications) {
         this.readNotifications = readNotifications;
     }
 
-    public Notification getUnreadNotifications() {
+    public ArrayList<Notification> getUnreadNotifications() {
         return unreadNotifications;
     }
 
-    public void setUnreadNotifications(Notification unreadNotifications) {
+    public void setUnreadNotifications(ArrayList<Notification> unreadNotifications) {
         this.unreadNotifications = unreadNotifications;
     }
 }

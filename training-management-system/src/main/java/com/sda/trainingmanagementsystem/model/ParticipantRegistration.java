@@ -1,6 +1,7 @@
 package com.sda.trainingmanagementsystem.model;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.Date;
 
@@ -10,7 +11,9 @@ import java.util.Date;
 public class ParticipantRegistration {
 
     private Date data;
-    private Participant User_participant;
+    @OneToOne
+    private User participant;
+    @OneToOne
     private Course course;
 
     public Date getData() {
@@ -22,12 +25,12 @@ public class ParticipantRegistration {
     }
 
 
-    public Participant getUser_participant() {
-        return User_participant;
+    public User getParticipant() {
+        return participant;
     }
 
-    public void setUser_participant(Participant user_participant) {
-        User_participant = user_participant;
+    public void setParticipant(User participant) {
+        this.participant = participant;
     }
 
     public Course getCourse() {
