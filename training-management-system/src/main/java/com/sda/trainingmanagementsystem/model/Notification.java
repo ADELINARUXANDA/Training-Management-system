@@ -14,6 +14,21 @@ public class Notification {
     @OneToOne
     private User userGiven;
 
+    @OneToMany
+    private List<Classes> classes = new ArrayList<>();
+    @OneToMany
+    private List<UserNotifications> notificationsArrayList = new ArrayList<>();
+    private String subject;
+    private String contents;
+
+    public List<UserNotifications> getNotificationsArrayList() {
+        return notificationsArrayList;
+    }
+
+    public void setNotificationsArrayList(List<UserNotifications> notificationsArrayList) {
+        this.notificationsArrayList = notificationsArrayList;
+    }
+
     public Long getId() {
         return id;
     }
@@ -29,27 +44,11 @@ public class Notification {
     public void setUserGiven(User userGiven) {
         this.userGiven = userGiven;
     }
-
-    public List<UserNotifications> getNotificationsArrayList() {
-        return notificationsArrayList;
-    }
-
-    public void setNotificationsArrayList(List<UserNotifications> notificationsArrayList) {
-        this.notificationsArrayList = notificationsArrayList;
-    }
-
-    @OneToMany
-    private ArrayList<Classes> classes;
-    @OneToMany
-    private List<UserNotifications> notificationsArrayList = new ArrayList<>();
-    private String subject;
-    private String contents;
-
-    public ArrayList<Classes> getClasses() {
+    public List<Classes> getClasses() {
         return classes;
     }
 
-    public void setClasses(ArrayList<Classes> classes) {
+    public void setClasses(List<Classes> classes) {
         this.classes = classes;
     }
 
