@@ -1,20 +1,23 @@
-package com.sda.trainingmanagementsystem.model;
+package com.sda.trainingmanagementsystem.Dto;
 
+import com.sda.trainingmanagementsystem.model.Classes;
 
-import javax.persistence.*;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name="ClassUnit")
-public class ClassUnit {
-    @Id
-    @GeneratedValue
+public class ClassUnitDto {
     private Long id;
-
     private String name;
-    @OneToMany
     private List<Classes> classesArrayList =new ArrayList<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -23,13 +26,7 @@ public class ClassUnit {
     public void setName(String name) {
         this.name = name;
     }
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
     public List<Classes> getClassesArrayList() {
         return classesArrayList;
     }
@@ -37,5 +34,4 @@ public class ClassUnit {
     public void setClassesArrayList(List<Classes> classesArrayList) {
         this.classesArrayList = classesArrayList;
     }
-
 }

@@ -1,18 +1,22 @@
-package com.sda.trainingmanagementsystem.model;
+package com.sda.trainingmanagementsystem.Dto;
 
+import com.sda.trainingmanagementsystem.model.Classes;
+import com.sda.trainingmanagementsystem.model.User;
+import com.sda.trainingmanagementsystem.model.UserNotifications;
 
-import javax.persistence.*;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table (name="Notification")
-public class Notification {
-    @Id
-    @GeneratedValue
+public class NotificationDto {
+
     private Long id;
-    @OneToOne
     private User userGiven;
+    private ArrayList<Classes> classes;
+    private List<UserNotifications> notificationsArrayList = new ArrayList<>();
+    private String subject;
+    private String contents;
 
     public Long getId() {
         return id;
@@ -30,27 +34,20 @@ public class Notification {
         this.userGiven = userGiven;
     }
 
-    public List<UserNotifications> getNotificationsArrayList() {
-        return notificationsArrayList;
-    }
-
-    public void setNotificationsArrayList(List<UserNotifications> notificationsArrayList) {
-        this.notificationsArrayList = notificationsArrayList;
-    }
-
-    @OneToMany
-    private ArrayList<Classes> classes;
-    @OneToMany
-    private List<UserNotifications> notificationsArrayList = new ArrayList<>();
-    private String subject;
-    private String contents;
-
     public ArrayList<Classes> getClasses() {
         return classes;
     }
 
     public void setClasses(ArrayList<Classes> classes) {
         this.classes = classes;
+    }
+
+    public List<UserNotifications> getNotificationsArrayList() {
+        return notificationsArrayList;
+    }
+
+    public void setNotificationsArrayList(List<UserNotifications> notificationsArrayList) {
+        this.notificationsArrayList = notificationsArrayList;
     }
 
     public String getSubject() {

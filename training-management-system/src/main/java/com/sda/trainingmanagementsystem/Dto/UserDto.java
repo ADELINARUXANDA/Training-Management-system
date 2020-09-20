@@ -1,49 +1,21 @@
-package com.sda.trainingmanagementsystem.model;
+package com.sda.trainingmanagementsystem.Dto;
 
+import com.sda.trainingmanagementsystem.model.Course;
+import com.sda.trainingmanagementsystem.model.Type;
+import com.sda.trainingmanagementsystem.model.UserNotifications;
 
-import javax.persistence.*;
+import javax.persistence.OneToOne;
 
-@Entity
-@Table(name = "User")
-public class User {
-    @Id
-    @GeneratedValue
+public class UserDto {
+
     private Long id;
     private String login;
     private String password;
-
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }
-
-    public UserNotifications getUserNotifications() {
-        return userNotifications;
-    }
-
-    public void setUserNotifications(UserNotifications userNotifications) {
-        this.userNotifications = userNotifications;
-    }
-
-    public Course getCourse() {
-        return course;
-    }
-
-    public void setCourse(Course course) {
-        this.course = course;
-    }
-
-    @Enumerated(EnumType.STRING)
     private Type type;
     private String first_name;
     private String last_name;
     private String active_status;
-    @OneToOne
     private UserNotifications userNotifications;
-    @OneToOne
     private Course course;
 
     public Long getId() {
@@ -70,6 +42,14 @@ public class User {
         this.password = password;
     }
 
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
     public String getFirst_name() {
         return first_name;
     }
@@ -92,5 +72,21 @@ public class User {
 
     public void setActive_status(String active_status) {
         this.active_status = active_status;
+    }
+
+    public UserNotifications getUserNotifications() {
+        return userNotifications;
+    }
+
+    public void setUserNotifications(UserNotifications userNotifications) {
+        this.userNotifications = userNotifications;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
 }

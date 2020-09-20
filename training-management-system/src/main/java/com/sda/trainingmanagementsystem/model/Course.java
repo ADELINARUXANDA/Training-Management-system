@@ -1,20 +1,37 @@
 package com.sda.trainingmanagementsystem.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Course")
 public class Course {
-
+    @Id
+    @GeneratedValue
+    private Long id;
     private String name;
     @OneToMany
 
-    private ArrayList<ClassUnit> classUnits;
+    private List<ClassUnit> classUnits = new ArrayList<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public ParticipantRegistration getParticipantRegistration() {
+        return participantRegistration;
+    }
+
+    public void setParticipantRegistration(ParticipantRegistration participantRegistration) {
+        this.participantRegistration = participantRegistration;
+    }
+
     @OneToOne
     private ParticipantRegistration participantRegistration;
 
@@ -26,11 +43,11 @@ public class Course {
         this.name = name;
     }
 
-    public ArrayList<ClassUnit> getClassUnits() {
+    public List<ClassUnit> getClassUnits() {
         return classUnits;
     }
 
-    public void setClassUnits(ArrayList<ClassUnit> classUnits) {
+    public void setClassUnits(List<ClassUnit> classUnits) {
         this.classUnits = classUnits;
     }
 }

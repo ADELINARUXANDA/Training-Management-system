@@ -1,18 +1,14 @@
-package com.sda.trainingmanagementsystem.model;
+package com.sda.trainingmanagementsystem.Dto;
 
-import javax.persistence.*;
+import com.sda.trainingmanagementsystem.model.Notification;
+
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name="UserNotification")
-public class UserNotifications<Arraylist> {
-    @Id
-    @GeneratedValue
+public class UserNotificationDto {
     private Long id;
-    @OneToMany
     private List<Notification> readNotifications = new ArrayList<>();
-    @OneToMany
     private List<Notification> unreadNotifications = new ArrayList<>();
 
     public Long getId() {
