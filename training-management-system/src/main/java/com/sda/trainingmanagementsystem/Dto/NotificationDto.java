@@ -1,20 +1,18 @@
 package com.sda.trainingmanagementsystem.Dto;
 
-import com.sda.trainingmanagementsystem.model.Classes;
-import com.sda.trainingmanagementsystem.model.User;
-import com.sda.trainingmanagementsystem.model.UserNotifications;
+import com.sda.trainingmanagementsystem.model.ClassesModel;
+import com.sda.trainingmanagementsystem.model.UserModel;
+import com.sda.trainingmanagementsystem.model.UserNotificationsModel;
 
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.List;
 
 public class NotificationDto {
 
     private Long id;
-    private User userGiven;
-    private ArrayList<Classes> classes;
-    private List<UserNotifications> notificationsArrayList = new ArrayList<>();
+    private UserModel userGiven;
+    private ArrayList<ClassesModel> classes;
+    private List<UserNotificationsModel> notificationsArrayList = new ArrayList<>();
     private String subject;
     private String contents;
 
@@ -26,27 +24,27 @@ public class NotificationDto {
         this.id = id;
     }
 
-    public User getUserGiven() {
+    public UserModel getUserGiven() {
         return userGiven;
     }
 
-    public void setUserGiven(User userGiven) {
+    public void setUserGiven(UserModel userGiven) {
         this.userGiven = userGiven;
     }
 
-    public ArrayList<Classes> getClasses() {
+    public ArrayList<ClassesModel> getClasses() {
         return classes;
     }
 
-    public void setClasses(ArrayList<Classes> classes) {
+    public void setClasses(ArrayList<ClassesModel> classes) {
         this.classes = classes;
     }
 
-    public List<UserNotifications> getNotificationsArrayList() {
+    public List<UserNotificationsModel> getNotificationsArrayList() {
         return notificationsArrayList;
     }
 
-    public void setNotificationsArrayList(List<UserNotifications> notificationsArrayList) {
+    public void setNotificationsArrayList(List<UserNotificationsModel> notificationsArrayList) {
         this.notificationsArrayList = notificationsArrayList;
     }
 

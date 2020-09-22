@@ -7,14 +7,14 @@ import java.util.List;
 
 @Entity
 @Table(name="ClassUnit")
-public class ClassUnit {
+public class ClassUnitModel {
     @Id
     @GeneratedValue
     private Long id;
 
     private String name;
     @OneToMany
-    private List<Classes> classesArrayList =new ArrayList<>();
+    private List<ClassesModel> classesArrayList =new ArrayList<>();
 
     public String getName() {
         return name;
@@ -30,11 +30,11 @@ public class ClassUnit {
     public void setId(Long id) {
         this.id = id;
     }
-    public List<Classes> getClassesArrayList() {
+    public List<ClassesModel> getClassesArrayList() {
         return classesArrayList;
     }
 
-    public void setClassesArrayList(List<Classes> classesArrayList) {
+    public void setClassesArrayList(List<ClassesModel> classesArrayList) {
         this.classesArrayList = classesArrayList;
     }
 

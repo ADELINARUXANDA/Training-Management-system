@@ -1,15 +1,14 @@
 package com.sda.trainingmanagementsystem.Dto;
 
-import com.sda.trainingmanagementsystem.model.Classes;
+import com.sda.trainingmanagementsystem.model.ClassesModel;
 
-import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClassUnitDto {
     private Long id;
     private String name;
-    private List<Classes> classesArrayList =new ArrayList<>();
+    private List<ClassesModel> classesArrayList =new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -27,11 +26,11 @@ public class ClassUnitDto {
         this.name = name;
     }
 
-    public List<Classes> getClassesArrayList() {
+    public List<ClassesModel> getClassesArrayList() {
         return classesArrayList;
     }
 
-    public void setClassesArrayList(List<Classes> classesArrayList) {
+    public void setClassesArrayList(List<ClassesModel> classesArrayList) {
         this.classesArrayList = classesArrayList;
     }
 }

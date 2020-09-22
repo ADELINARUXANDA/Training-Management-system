@@ -7,14 +7,14 @@ import java.util.List;
 
 @Entity
 @Table(name = "Course")
-public class Course {
+public class CourseModel {
     @Id
     @GeneratedValue
     private Long id;
     private String name;
     @OneToMany
 
-    private List<ClassUnit> classUnits = new ArrayList<>();
+    private List<ClassUnitModel> classUnits = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -24,16 +24,16 @@ public class Course {
         this.id = id;
     }
 
-    public ParticipantRegistration getParticipantRegistration() {
+    public ParticipantRegistrationModel getParticipantRegistration() {
         return participantRegistration;
     }
 
-    public void setParticipantRegistration(ParticipantRegistration participantRegistration) {
+    public void setParticipantRegistration(ParticipantRegistrationModel participantRegistration) {
         this.participantRegistration = participantRegistration;
     }
 
     @OneToOne
-    private ParticipantRegistration participantRegistration;
+    private ParticipantRegistrationModel participantRegistration;
 
     public String getName() {
         return name;
@@ -43,11 +43,11 @@ public class Course {
         this.name = name;
     }
 
-    public List<ClassUnit> getClassUnits() {
+    public List<ClassUnitModel> getClassUnits() {
         return classUnits;
     }
 
-    public void setClassUnits(List<ClassUnit> classUnits) {
+    public void setClassUnits(List<ClassUnitModel> classUnits) {
         this.classUnits = classUnits;
     }
 }

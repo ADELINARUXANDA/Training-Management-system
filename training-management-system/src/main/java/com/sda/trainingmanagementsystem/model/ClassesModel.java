@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="Classes")
-public class Classes {
+public class ClassesModel {
   @Id
   @GeneratedValue
   private Long id;

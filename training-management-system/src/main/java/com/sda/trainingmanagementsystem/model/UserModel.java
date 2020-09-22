@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "User")
-public class User {
+public class UserModel {
     @Id
     @GeneratedValue
     private Long id;
@@ -20,19 +20,19 @@ public class User {
         this.type = type;
     }
 
-    public UserNotifications getUserNotifications() {
+    public UserNotificationsModel getUserNotifications() {
         return userNotifications;
     }
 
-    public void setUserNotifications(UserNotifications userNotifications) {
+    public void setUserNotifications(UserNotificationsModel userNotifications) {
         this.userNotifications = userNotifications;
     }
 
-    public Course getCourse() {
+    public CourseModel getCourse() {
         return course;
     }
 
-    public void setCourse(Course course) {
+    public void setCourse(CourseModel course) {
         this.course = course;
     }
 
@@ -42,9 +42,9 @@ public class User {
     private String last_name;
     private String active_status;
     @OneToOne
-    private UserNotifications userNotifications;
+    private UserNotificationsModel userNotifications;
     @OneToOne
-    private Course course;
+    private CourseModel course;
 
     public Long getId() {
         return id;

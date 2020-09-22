@@ -6,7 +6,7 @@ import java.util.Date;
 @Entity
 @Table(name="ParticipantRegistration")
 
-public class ParticipantRegistration {
+public class ParticipantRegistrationModel {
 
 
     @Id
@@ -15,9 +15,9 @@ public class ParticipantRegistration {
     @Temporal(TemporalType.DATE)
     private Date data;
     @OneToOne
-    private User participant;
+    private UserModel participant;
     @OneToOne
-    private Course course;
+    private CourseModel course;
 
     public Long getId() {
         return id;
@@ -35,19 +35,19 @@ public class ParticipantRegistration {
     }
 
 
-    public User getParticipant() {
+    public UserModel getParticipant() {
         return participant;
     }
 
-    public void setParticipant(User participant) {
+    public void setParticipant(UserModel participant) {
         this.participant = participant;
     }
 
-    public Course getCourse() {
+    public CourseModel getCourse() {
         return course;
     }
 
-    public void setCourse(Course course) {
+    public void setCourse(CourseModel course) {
         this.course = course;
     }
 

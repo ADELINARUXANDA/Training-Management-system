@@ -1,10 +1,8 @@
 package com.sda.trainingmanagementsystem.Dto;
 
-import com.sda.trainingmanagementsystem.model.Course;
+import com.sda.trainingmanagementsystem.model.CourseModel;
 import com.sda.trainingmanagementsystem.model.Type;
-import com.sda.trainingmanagementsystem.model.UserNotifications;
-
-import javax.persistence.OneToOne;
+import com.sda.trainingmanagementsystem.model.UserNotificationsModel;
 
 public class UserDto {
 
@@ -15,8 +13,8 @@ public class UserDto {
     private String first_name;
     private String last_name;
     private String active_status;
-    private UserNotifications userNotifications;
-    private Course course;
+    private UserNotificationsModel userNotifications;
+    private CourseModel course;
 
     public Long getId() {
         return id;
@@ -74,19 +72,19 @@ public class UserDto {
         this.active_status = active_status;
     }
 
-    public UserNotifications getUserNotifications() {
+    public UserNotificationsModel getUserNotifications() {
         return userNotifications;
     }
 
-    public void setUserNotifications(UserNotifications userNotifications) {
+    public void setUserNotifications(UserNotificationsModel userNotifications) {
         this.userNotifications = userNotifications;
     }
 
-    public Course getCourse() {
+    public CourseModel getCourse() {
         return course;
     }
 
-    public void setCourse(Course course) {
+    public void setCourse(CourseModel course) {
         this.course = course;
     }
 }

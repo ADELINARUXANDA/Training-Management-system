@@ -1,7 +1,7 @@
 package com.sda.trainingmanagementsystem.Dto;
 
-import com.sda.trainingmanagementsystem.model.ClassUnit;
-import com.sda.trainingmanagementsystem.model.ParticipantRegistration;
+import com.sda.trainingmanagementsystem.model.ClassUnitModel;
+import com.sda.trainingmanagementsystem.model.ParticipantRegistrationModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,24 +25,24 @@ public class CourseDto {
         this.name = name;
     }
 
-    public List<ClassUnit> getClassUnits() {
+    public List<ClassUnitModel> getClassUnits() {
         return classUnits;
     }
 
-    public void setClassUnits(List<ClassUnit> classUnits) {
+    public void setClassUnits(List<ClassUnitModel> classUnits) {
         this.classUnits = classUnits;
     }
 
-    public ParticipantRegistration getParticipantRegistration() {
+    public ParticipantRegistrationModel getParticipantRegistration() {
         return participantRegistration;
     }
 
-    public void setParticipantRegistration(ParticipantRegistration participantRegistration) {
+    public void setParticipantRegistration(ParticipantRegistrationModel participantRegistration) {
         this.participantRegistration = participantRegistration;
     }
 
     private String name;
-    private List<ClassUnit> classUnits = new ArrayList<>();
-    private ParticipantRegistration participantRegistration;
+    private List<ClassUnitModel> classUnits = new ArrayList<>();
+    private ParticipantRegistrationModel participantRegistration;
 
 }

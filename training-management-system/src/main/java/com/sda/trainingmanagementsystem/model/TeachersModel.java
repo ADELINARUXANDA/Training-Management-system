@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="AccountsTeachers")
 
-public class Teachers {
+public class TeachersModel {
     @Id
     @GeneratedValue
     private Long id;

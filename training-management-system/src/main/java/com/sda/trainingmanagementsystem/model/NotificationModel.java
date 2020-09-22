@@ -7,25 +7,25 @@ import java.util.List;
 
 @Entity
 @Table (name="Notification")
-public class Notification {
+public class NotificationModel {
     @Id
     @GeneratedValue
     private Long id;
     @OneToOne
-    private User userGiven;
+    private UserModel userGiven;
 
     @OneToMany
-    private List<Classes> classes = new ArrayList<>();
+    private List<ClassesModel> classes = new ArrayList<>();
     @OneToMany
-    private List<UserNotifications> notificationsArrayList = new ArrayList<>();
+    private List<UserNotificationsModel> notificationsArrayList = new ArrayList<>();
     private String subject;
     private String contents;
 
-    public List<UserNotifications> getNotificationsArrayList() {
+    public List<UserNotificationsModel> getNotificationsArrayList() {
         return notificationsArrayList;
     }
 
-    public void setNotificationsArrayList(List<UserNotifications> notificationsArrayList) {
+    public void setNotificationsArrayList(List<UserNotificationsModel> notificationsArrayList) {
         this.notificationsArrayList = notificationsArrayList;
     }
 
@@ -37,18 +37,18 @@ public class Notification {
         this.id = id;
     }
 
-    public User getUserGiven() {
+    public UserModel getUserGiven() {
         return userGiven;
     }
 
-    public void setUserGiven(User userGiven) {
+    public void setUserGiven(UserModel userGiven) {
         this.userGiven = userGiven;
     }
-    public List<Classes> getClasses() {
+    public List<ClassesModel> getClasses() {
         return classes;
     }
 
-    public void setClasses(List<Classes> classes) {
+    public void setClasses(List<ClassesModel> classes) {
         this.classes = classes;
     }
 
