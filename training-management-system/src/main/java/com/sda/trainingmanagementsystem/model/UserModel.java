@@ -1,6 +1,9 @@
 package com.sda.trainingmanagementsystem.model;
 
 
+import com.sda.trainingmanagementsystem.Dto.CourseDto;
+import com.sda.trainingmanagementsystem.Dto.UserNotificationDto;
+
 import javax.persistence.*;
 
 @Entity
@@ -20,7 +23,7 @@ public class UserModel {
         this.type = type;
     }
 
-    public UserNotificationsModel getUserNotifications() {
+    public UserNotificationDto getUserNotifications() {
         return userNotifications;
     }
 
@@ -28,7 +31,7 @@ public class UserModel {
         this.userNotifications = userNotifications;
     }
 
-    public CourseModel getCourse() {
+    public CourseDto getCourse() {
         return course;
     }
 

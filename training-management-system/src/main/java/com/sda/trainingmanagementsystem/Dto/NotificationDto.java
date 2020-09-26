@@ -10,9 +10,9 @@ import java.util.List;
 public class NotificationDto {
 
     private Long id;
-    private UserModel userGiven;
-    private ArrayList<ClassesModel> classes;
-    private List<UserNotificationsModel> notificationsArrayList = new ArrayList<>();
+    private UserDto userGiven;
+    private ArrayList<ClassesDto> classes;
+    private List<UserNotificationDto> notificationsArrayListDto = new ArrayList<>();
     private String subject;
     private String contents;
 
@@ -28,24 +28,24 @@ public class NotificationDto {
         return userGiven;
     }
 
-    public void setUserGiven(UserModel userGiven) {
+    public void setUserGiven(UserDto userGiven) {
         this.userGiven = userGiven;
     }
 
-    public ArrayList<ClassesModel> getClasses() {
+    public List<ClassesModel> getClasses() {
         return classes;
     }
 
-    public void setClasses(ArrayList<ClassesModel> classes) {
+    public void setClasses(ArrayList<ClassesDto> classes) {
         this.classes = classes;
     }
 
-    public List<UserNotificationsModel> getNotificationsArrayList() {
-        return notificationsArrayList;
+    public List<UserNotificationsModel> getNotificationsArrayListDto() {
+        return notificationsArrayListDto;
     }
 
-    public void setNotificationsArrayList(List<UserNotificationsModel> notificationsArrayList) {
-        this.notificationsArrayList = notificationsArrayList;
+    public void setNotificationsArrayListDto(List<UserNotificationDto> notificationsArrayListDto) {
+        this.notificationsArrayListDto = notificationsArrayListDto;
     }
 
     public String getSubject() {

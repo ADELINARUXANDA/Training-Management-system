@@ -7,8 +7,8 @@ import java.util.List;
 
 public class UserNotificationDto {
     private Long id;
-    private List<NotificationModel> readNotifications = new ArrayList<>();
-    private List<NotificationModel> unreadNotifications = new ArrayList<>();
+    private List<NotificationDto> readNotificationsDto = new ArrayList<>();
+    private List<NotificationDto> unreadNotifications = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -18,19 +18,20 @@ public class UserNotificationDto {
         this.id = id;
     }
 
-    public List<NotificationModel> getReadNotifications() {
-        return readNotifications;
+    public List<NotificationDto> getReadNotificationsDto() {
+        return readNotificationsDto;
     }
 
-    public void setReadNotifications(List<NotificationModel> readNotifications) {
-        this.readNotifications = readNotifications;
+    public void setReadNotificationsDto(List<NotificationDto> readNotificationsDto) {
+        this.readNotificationsDto = readNotificationsDto;
     }
 
-    public List<NotificationModel> getUnreadNotifications() {
+    public List<NotificationDto> getUnreadNotifications() {
         return unreadNotifications;
     }
 
-    public void setUnreadNotifications(List<NotificationModel> unreadNotifications) {
+    public void setUnreadNotifications(List<NotificationDto> unreadNotifications) {
         this.unreadNotifications = unreadNotifications;
     }
 }
+

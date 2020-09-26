@@ -1,6 +1,10 @@
 package com.sda.trainingmanagementsystem.model;
 
 
+import com.sda.trainingmanagementsystem.Dto.ClassesDto;
+import com.sda.trainingmanagementsystem.Dto.UserDto;
+import com.sda.trainingmanagementsystem.Dto.UserNotificationDto;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +25,7 @@ public class NotificationModel {
     private String subject;
     private String contents;
 
-    public List<UserNotificationsModel> getNotificationsArrayList() {
+    public List<UserNotificationDto> getNotificationsArrayList() {
         return notificationsArrayList;
     }
 
@@ -37,14 +41,14 @@ public class NotificationModel {
         this.id = id;
     }
 
-    public UserModel getUserGiven() {
+    public UserDto getUserGiven() {
         return userGiven;
     }
 
     public void setUserGiven(UserModel userGiven) {
         this.userGiven = userGiven;
     }
-    public List<ClassesModel> getClasses() {
+    public ArrayList<ClassesDto> getClasses() {
         return classes;
     }
 

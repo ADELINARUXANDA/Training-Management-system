@@ -8,6 +8,9 @@ import java.util.List;
 
 public class CourseDto {
     private Long id;
+    private String name;
+    private List<ClassUnitDto> classUnitsDto = new ArrayList<>();
+    private ParticipantRegistrationDto participantRegistrationDto;
 
     public Long getId() {
         return id;
@@ -25,24 +28,19 @@ public class CourseDto {
         this.name = name;
     }
 
-    public List<ClassUnitModel> getClassUnits() {
-        return classUnits;
+    public List<ClassUnitModel> getClassUnitsDto() {
+        return classUnitsDto;
     }
 
-    public void setClassUnits(List<ClassUnitModel> classUnits) {
-        this.classUnits = classUnits;
+    public void setClassUnitsDto(List<ClassUnitDto> classUnitsDto) {
+        this.classUnitsDto = classUnitsDto;
     }
 
-    public ParticipantRegistrationModel getParticipantRegistration() {
-        return participantRegistration;
+    public ParticipantRegistrationModel getParticipantRegistrationDto() {
+        return participantRegistrationDto;
     }
 
-    public void setParticipantRegistration(ParticipantRegistrationModel participantRegistration) {
-        this.participantRegistration = participantRegistration;
+    public void setParticipantRegistrationDto(ParticipantRegistrationDto participantRegistrationDto) {
+        this.participantRegistrationDto = participantRegistrationDto;
     }
-
-    private String name;
-    private List<ClassUnitModel> classUnits = new ArrayList<>();
-    private ParticipantRegistrationModel participantRegistration;
-
 }

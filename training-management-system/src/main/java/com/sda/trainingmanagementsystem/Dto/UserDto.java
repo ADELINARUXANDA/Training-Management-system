@@ -13,8 +13,8 @@ public class UserDto {
     private String first_name;
     private String last_name;
     private String active_status;
-    private UserNotificationsModel userNotifications;
-    private CourseModel course;
+    private UserNotificationDto userNotificationsDto;
+    private CourseDto course;
 
     public Long getId() {
         return id;
@@ -72,19 +72,19 @@ public class UserDto {
         this.active_status = active_status;
     }
 
-    public UserNotificationsModel getUserNotifications() {
-        return userNotifications;
+    public UserNotificationsModel getUserNotificationsDto() {
+        return userNotificationsDto;
     }
 
-    public void setUserNotifications(UserNotificationsModel userNotifications) {
-        this.userNotifications = userNotifications;
+    public void setUserNotificationsDto(UserNotificationDto userNotificationsDto) {
+        this.userNotificationsDto = userNotificationsDto;
     }
 
     public CourseModel getCourse() {
         return course;
     }
 
-    public void setCourse(CourseModel course) {
+    public void setCourse(CourseDto course) {
         this.course = course;
     }
 }

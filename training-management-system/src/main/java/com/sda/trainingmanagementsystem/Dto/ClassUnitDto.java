@@ -8,7 +8,7 @@ import java.util.List;
 public class ClassUnitDto {
     private Long id;
     private String name;
-    private List<ClassesModel> classesArrayList =new ArrayList<>();
+    private List<ClassesDto> classesArrayList =new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -26,11 +26,11 @@ public class ClassUnitDto {
         this.name = name;
     }
 
-    public List<ClassesModel> getClassesArrayList() {
+    public List<ClassesDto> getClassesArrayList() {
         return classesArrayList;
     }
 
-    public void setClassesArrayList(List<ClassesModel> classesArrayList) {
+    public void setClassesArrayList(List<ClassesDto> classesArrayList) {
         this.classesArrayList = classesArrayList;
     }
 }

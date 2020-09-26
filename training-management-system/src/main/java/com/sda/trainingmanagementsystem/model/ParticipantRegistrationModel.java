@@ -1,5 +1,8 @@
 package com.sda.trainingmanagementsystem.model;
 
+import com.sda.trainingmanagementsystem.Dto.CourseDto;
+import com.sda.trainingmanagementsystem.Dto.UserDto;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -35,7 +38,7 @@ public class ParticipantRegistrationModel {
     }
 
 
-    public UserModel getParticipant() {
+    public UserDto getParticipant() {
         return participant;
     }
 
@@ -43,7 +46,7 @@ public class ParticipantRegistrationModel {
         this.participant = participant;
     }
 
-    public CourseModel getCourse() {
+    public CourseDto getCourse() {
         return course;
     }
 

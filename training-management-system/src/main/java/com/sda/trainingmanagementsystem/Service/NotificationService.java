@@ -10,8 +10,8 @@ public interface NotificationService {
     List<NotificationDto> getNotifications();
     NotificationDto findNotificationbyId(Long id);
     void deleteNotification(Long id);
-    void updateNotification(UserDto userDto);
-    void addNotification(UserDto userDto);
-    UserDto findNotificationByRead(UserDto userDto);
-    UserDto findNotificationByUnRead(UserDto userDto);
+    void updateNotification(NotificationDto notificationDto);
+    void addNotification(NotificationDto notificationDto);
+    UserDto findNotificationByRead(NotificationDto notificationDto);
+    UserDto findNotificationByUnRead(NotificationDto notificationDto);
 }

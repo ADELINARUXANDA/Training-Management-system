@@ -1,6 +1,9 @@
 package com.sda.trainingmanagementsystem.model;
 
 
+import com.sda.trainingmanagementsystem.Dto.ClassUnitDto;
+import com.sda.trainingmanagementsystem.Dto.ParticipantRegistrationDto;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +16,9 @@ public class CourseModel {
     private Long id;
     private String name;
     @OneToMany
-
     private List<ClassUnitModel> classUnits = new ArrayList<>();
+    @OneToOne
+    private ParticipantRegistrationModel participantRegistration;
 
     public Long getId() {
         return id;
@@ -24,17 +28,6 @@ public class CourseModel {
         this.id = id;
     }
 
-    public ParticipantRegistrationModel getParticipantRegistration() {
-        return participantRegistration;
-    }
-
-    public void setParticipantRegistration(ParticipantRegistrationModel participantRegistration) {
-        this.participantRegistration = participantRegistration;
-    }
-
-    @OneToOne
-    private ParticipantRegistrationModel participantRegistration;
-
     public String getName() {
         return name;
     }
@@ -43,11 +36,19 @@ public class CourseModel {
         this.name = name;
     }
 
-    public List<ClassUnitModel> getClassUnits() {
+    public List<ClassUnitDto> getClassUnits() {
         return classUnits;
     }
 
     public void setClassUnits(List<ClassUnitModel> classUnits) {
         this.classUnits = classUnits;
+    }
+
+    public ParticipantRegistrationDto getParticipantRegistration() {
+        return participantRegistration;
+    }
+
+    public void setParticipantRegistration(ParticipantRegistrationModel participantRegistration) {
+        this.participantRegistration = participantRegistration;
     }
 }
