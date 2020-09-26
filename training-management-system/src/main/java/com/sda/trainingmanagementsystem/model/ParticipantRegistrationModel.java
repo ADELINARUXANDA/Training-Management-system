@@ -29,6 +29,7 @@ public class ParticipantRegistrationModel {
     public void setId(Long id) {
         this.id = id;
     }
+
     public Date getData() {
         return data;
     }
@@ -37,8 +38,7 @@ public class ParticipantRegistrationModel {
         this.data = data;
     }
 
-
-    public UserDto getParticipant() {
+    public UserModel getParticipant() {
         return participant;
     }
 
@@ -46,12 +46,11 @@ public class ParticipantRegistrationModel {
         this.participant = participant;
     }
 
-    public CourseDto getCourse() {
+    public CourseModel getCourse() {
         return course;
     }
 
     public void setCourse(CourseModel course) {
         this.course = course;
     }
-
 }

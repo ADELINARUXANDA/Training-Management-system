@@ -72,7 +72,7 @@ public class UserDto {
         this.active_status = active_status;
     }
 
-    public UserNotificationsModel getUserNotificationsDto() {
+    public UserNotificationDto getUserNotificationsDto() {
         return userNotificationsDto;
     }
 
@@ -80,7 +80,7 @@ public class UserDto {
         this.userNotificationsDto = userNotificationsDto;
     }
 
-    public CourseModel getCourse() {
+    public CourseDto getCourse() {
         return course;
     }
 

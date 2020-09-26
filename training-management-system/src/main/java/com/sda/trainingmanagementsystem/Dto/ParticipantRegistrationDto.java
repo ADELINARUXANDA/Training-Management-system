@@ -31,7 +31,7 @@ public class ParticipantRegistrationDto {
         this.data = data;
     }
 
-    public UserModel getParticipant() {
+    public UserDto getParticipant() {
         return participant;
     }
 
@@ -39,7 +39,7 @@ public class ParticipantRegistrationDto {
         this.participant = participant;
     }
 
-    public CourseModel getCourse() {
+    public CourseDto getCourse() {
         return course;
     }
 

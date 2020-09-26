@@ -14,31 +14,6 @@ public class UserModel {
     private Long id;
     private String login;
     private String password;
-
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }
-
-    public UserNotificationDto getUserNotifications() {
-        return userNotifications;
-    }
-
-    public void setUserNotifications(UserNotificationsModel userNotifications) {
-        this.userNotifications = userNotifications;
-    }
-
-    public CourseDto getCourse() {
-        return course;
-    }
-
-    public void setCourse(CourseModel course) {
-        this.course = course;
-    }
-
     @Enumerated(EnumType.STRING)
     private Type type;
     private String first_name;
@@ -73,6 +48,14 @@ public class UserModel {
         this.password = password;
     }
 
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
     public String getFirst_name() {
         return first_name;
     }
@@ -95,5 +78,21 @@ public class UserModel {
 
     public void setActive_status(String active_status) {
         this.active_status = active_status;
+    }
+
+    public UserNotificationsModel getUserNotifications() {
+        return userNotifications;
+    }
+
+    public void setUserNotifications(UserNotificationsModel userNotifications) {
+        this.userNotifications = userNotifications;
+    }
+
+    public CourseModel getCourse() {
+        return course;
+    }
+
+    public void setCourse(CourseModel course) {
+        this.course = course;
     }
 }

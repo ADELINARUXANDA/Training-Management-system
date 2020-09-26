@@ -6,7 +6,7 @@ import com.sda.trainingmanagementsystem.Dto.UserDto;
 import java.util.List;
 
 public interface ParticipantService {
-    List<ParticipantRegistrationDto> getRaprticipants();
+    List<ParticipantRegistrationDto> getParticipants();
     ParticipantRegistrationDto findParticipantbyId(Long id);
     void deleteParticipant(Long id);
     void updateParticipant(ParticipantRegistrationDto participantRegistrationDto);

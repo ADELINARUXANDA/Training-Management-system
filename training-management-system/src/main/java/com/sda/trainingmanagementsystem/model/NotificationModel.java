@@ -2,7 +2,6 @@ package com.sda.trainingmanagementsystem.model;
 
 
 import com.sda.trainingmanagementsystem.Dto.ClassesDto;
-import com.sda.trainingmanagementsystem.Dto.UserDto;
 import com.sda.trainingmanagementsystem.Dto.UserNotificationDto;
 
 import javax.persistence.*;
@@ -25,14 +24,6 @@ public class NotificationModel {
     private String subject;
     private String contents;
 
-    public List<UserNotificationDto> getNotificationsArrayList() {
-        return notificationsArrayList;
-    }
-
-    public void setNotificationsArrayList(List<UserNotificationsModel> notificationsArrayList) {
-        this.notificationsArrayList = notificationsArrayList;
-    }
-
     public Long getId() {
         return id;
     }
@@ -41,19 +32,28 @@ public class NotificationModel {
         this.id = id;
     }
 
-    public UserDto getUserGiven() {
+    public UserModel getUserGiven() {
         return userGiven;
     }
 
     public void setUserGiven(UserModel userGiven) {
         this.userGiven = userGiven;
     }
-    public ArrayList<ClassesDto> getClasses() {
+
+    public List<ClassesModel> getClasses() {
         return classes;
     }
 
     public void setClasses(List<ClassesModel> classes) {
         this.classes = classes;
+    }
+
+    public List<UserNotificationsModel> getNotificationsArrayList() {
+        return notificationsArrayList;
+    }
+
+    public void setNotificationsArrayList(List<UserNotificationsModel> notificationsArrayList) {
+        this.notificationsArrayList = notificationsArrayList;
     }
 
     public String getSubject() {

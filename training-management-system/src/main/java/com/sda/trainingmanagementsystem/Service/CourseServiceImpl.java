@@ -29,8 +29,6 @@ public class CourseServiceImpl implements CourseService {
             CourseDto courseDto = new CourseDto();
             courseDto.setId(course.getId());
             courseDto.setName(course.getName());
-            courseDto.setParticipantRegistrationDto(course.getParticipantRegistration());
-            courseDto.setClassUnitsDto(course.getClassUnits());
             courseDtoList.add(courseDto);
         }
         return courseDtoList;
@@ -44,8 +42,6 @@ public class CourseServiceImpl implements CourseService {
             CourseDto courseDtoFind = new CourseDto();
             courseDtoFind.setId(courseModelFind.getId());
             courseDtoFind.setName(courseModelFind.getName());
-            courseDtoFind.setClassUnitsDto(courseModelFind.getClassUnits());
-            courseDtoFind.setParticipantRegistrationDto(courseModelFind.getParticipantRegistration());
 
             return courseDtoFind;
 
@@ -66,8 +62,7 @@ public class CourseServiceImpl implements CourseService {
         CourseModel courseModelFind = courseOptional.get();
         courseModelFind.setId(courseDto.getId());
         courseModelFind.setName(courseDto.getName());
-        courseModelFind.setParticipantRegistration(courseDto.getParticipantRegistrationDto());
-        courseModelFind.setClassUnits(courseDto.getClassUnitsDto());
+        courseRepository.save(courseModelFind);
      }
 
     }
@@ -77,8 +72,7 @@ public class CourseServiceImpl implements CourseService {
      CourseModel courseModel = new CourseModel();
      courseModel.setId(courseDto.getId());
      courseModel.setName(courseDto.getName());
-     courseModel.setParticipantRegistration(courseDto.getParticipantRegistrationDto());
-     courseModel.setClassUnits(courseDto.getClassUnitsDto());
+     courseRepository.save(courseModel);
     }
 
 

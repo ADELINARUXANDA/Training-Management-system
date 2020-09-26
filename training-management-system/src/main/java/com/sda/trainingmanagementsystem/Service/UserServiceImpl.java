@@ -26,11 +26,10 @@ public class UserServiceImpl implements UserService {
             userDto.setFirst_name(userModel.getFirst_name());
             userDto.setLast_name(userModel.getLast_name());
             userDto.setActive_status(userModel.getActive_status());
-            userDto.setCourse(userModel.getCourse());
             userDto.setType(userModel.getType());
             userDto.setLogin(userModel.getLogin());
             userDto.setPassword(userModel.getPassword());
-            userDto.setUserNotificationsDto(userModel.getUserNotifications());
+
             userDtoList.add(userDto);
         }
 
@@ -47,8 +46,6 @@ public class UserServiceImpl implements UserService {
             userDto.setFirst_name(userModelfind.getFirst_name());
             userDto.setLast_name(userModelfind.getLast_name());
             userDto.setLogin(userModelfind.getLogin());
-            userDto.setUserNotificationsDto(userModelfind.getUserNotifications());
-            userDto.setCourse(userModelfind.getCourse());
             userDto.setType(userModelfind.getType());
             userDto.setPassword(userModelfind.getPassword());
             userDto.setActive_status(userModelfind.getActive_status());
@@ -73,11 +70,11 @@ public class UserServiceImpl implements UserService {
             userModelFind.setFirst_name(userDto.getFirst_name());
             userModelFind.setLast_name(userDto.getLast_name());
             userModelFind.setActive_status(userDto.getActive_status());
-            userModelFind.setCourse(userDto.getCourse());
             userModelFind.setLogin(userDto.getLogin());
             userModelFind.setPassword(userDto.getPassword());
             userModelFind.setType(userDto.getType());
-            userModelFind.setUserNotifications(userDto.getUserNotificationsDto());
+            userRepository.save(userModelFind);
+
         }
 
     }
@@ -88,13 +85,11 @@ public class UserServiceImpl implements UserService {
      userModel.setId(userDto.getId());
      userModel.setFirst_name(userDto.getFirst_name());
      userModel.setLast_name(userDto.getLast_name());
-     userModel.setUserNotifications(userDto.getUserNotificationsDto());
      userModel.setLogin(userDto.getLogin());
-     userModel.setCourse(userDto.getCourse());
      userModel.setType(userDto.getType());
      userModel.setPassword(userDto.getPassword());
      userModel.setActive_status(userDto.getActive_status());
-
+     userRepository.save(userModel);
     }
 
     @Override

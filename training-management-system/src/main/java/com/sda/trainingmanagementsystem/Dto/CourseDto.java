@@ -28,7 +28,7 @@ public class CourseDto {
         this.name = name;
     }
 
-    public List<ClassUnitModel> getClassUnitsDto() {
+    public List<ClassUnitDto> getClassUnitsDto() {
         return classUnitsDto;
     }
 
@@ -36,7 +36,7 @@ public class CourseDto {
         this.classUnitsDto = classUnitsDto;
     }
 
-    public ParticipantRegistrationModel getParticipantRegistrationDto() {
+    public ParticipantRegistrationDto getParticipantRegistrationDto() {
         return participantRegistrationDto;
     }
 

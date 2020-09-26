@@ -27,10 +27,7 @@ public class NotificationServiceimpl implements NotificationService {
         for (NotificationModel notificationModel : notificationModels) {
             NotificationDto notificationDto = new NotificationDto();
             notificationDto.setId(notificationModel.getId());
-            notificationDto.setClasses(notificationModel.getClasses());
             notificationDto.setContents(notificationModel.getContents());
-            notificationDto.setNotificationsArrayListDto(notificationModel.getNotificationsArrayList());
-            notificationDto.setUserGiven(notificationModel.getUserGiven());
             notificationDto.setSubject(notificationModel.getSubject());
             notificationDtoList.add(notificationDto);
         }
@@ -45,10 +42,7 @@ public class NotificationServiceimpl implements NotificationService {
             NotificationDto notificationDto = new NotificationDto();
             notificationDto.setId(notificationModelFind.getId());
             notificationDto.setSubject(notificationModelFind.getSubject());
-            notificationDto.setUserGiven(notificationModelFind.getUserGiven());
-            notificationDto.setNotificationsArrayListDto(notificationModelFind.getNotificationsArrayList());
             notificationDto.setContents(notificationModelFind.getContents());
-            notificationDto.setClasses(notificationModelFind.getClasses());
 
             return notificationDto;
 
@@ -72,7 +66,8 @@ public class NotificationServiceimpl implements NotificationService {
             notificationModelFind.setContents(notificationDto.getContents());
             notificationModelFind.setSubject(notificationDto.getSubject());
             notificationModelFind.setNotificationsArrayList(notificationDto.getNotificationsArrayListDto());
-            notificationModelFind.setUserGiven(notificationDto.getUserGiven());
+            notificationRepository.save(notificationModelFind);
+
         }
     }
 
@@ -85,6 +80,7 @@ public class NotificationServiceimpl implements NotificationService {
         notificationModel.setSubject(notificationDto.getSubject());
         notificationModel.setContents(notificationDto.getContents());
         notificationModel.setClasses(notificationDto.getClasses());
+        notificationRepository.save(notificationModel);
     }
 
     @Override
