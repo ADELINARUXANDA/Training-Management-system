@@ -24,25 +24,6 @@ public class NotificationDto {
         this.id = id;
     }
 
-    public UserModel getUserGiven() {
-        return userGiven;
-    }
-
-    public void setUserGiven(UserDto userGiven) {
-        this.userGiven = userGiven;
-    }
-
-    public List<ClassesModel> getClasses() {
-        return classes;
-    }
-
-    public void setClasses(ArrayList<ClassesDto> classes) {
-        this.classes = classes;
-    }
-
-    public List<UserNotificationsModel> getNotificationsArrayListDto() {
-        return notificationsArrayListDto;
-    }
 
     public void setNotificationsArrayListDto(List<UserNotificationDto> notificationsArrayListDto) {
         this.notificationsArrayListDto = notificationsArrayListDto;
