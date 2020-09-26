@@ -51,7 +51,7 @@ participantRegistrationRepository.deleteById(id);
 
     @Override
     public void updateParticipant(ParticipantRegistrationDto participantRegistrationDto) {
-Optional<ParticipantRegistrationModel> participantRegistrationModel = participantRegistrationRepository.findById(participantRegistrationDto.getId())
+Optional<ParticipantRegistrationModel> participantRegistrationModel = participantRegistrationRepository.findById(participantRegistrationDto.getId());
      if (participantRegistrationModel.isPresent()){
          ParticipantRegistrationModel participantRegistrationModelFind = participantRegistrationModel.get();
          participantRegistrationModelFind.setId(participantRegistrationDto.getId());
