@@ -33,7 +33,7 @@ public class ClassesController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @GetMapping("findClassesById/{id}")
+    @GetMapping("findClassById/{id}")
     public ResponseEntity<ClassesDto> findClassesById(@PathVariable("id") Long id) {
         ClassesDto classesDto = classesService.findClassesById(id);
         return new ResponseEntity(classesDto, HttpStatus.OK);

@@ -45,7 +45,7 @@ public class ClassUnitController {
 
     }
 
-    @PutMapping("editClass")
+    @PutMapping("editClassUnit")
     public ResponseEntity updateClass(@RequestBody ClassUnitDto classUnitDto) {
         classUnitService.updateClassUnit(classUnitDto);
         return new ResponseEntity(HttpStatus.OK);

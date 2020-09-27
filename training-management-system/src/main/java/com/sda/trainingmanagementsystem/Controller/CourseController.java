@@ -21,7 +21,7 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-    @GetMapping("findCourse")
+    @GetMapping("findCourses")
     public ResponseEntity<List<ClassesDto>> getCourses() {
         List<CourseDto> courseDtoList = courseService.getCourses();
         return new ResponseEntity(courseDtoList, HttpStatus.OK);

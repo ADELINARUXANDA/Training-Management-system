@@ -16,7 +16,7 @@ public class NotificationController {
     @Autowired
     private NotificationService notificationService;
 
-    @GetMapping("findNotificatioms")
+    @GetMapping("findNotifications")
     public ResponseEntity<List<ClassesDto>> getNotifications() {
         List<NotificationDto> notificationDtoList = notificationService.getNotifications();
         return new ResponseEntity(notificationDtoList, HttpStatus.OK);
