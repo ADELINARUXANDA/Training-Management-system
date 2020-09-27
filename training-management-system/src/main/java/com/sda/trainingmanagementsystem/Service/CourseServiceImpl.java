@@ -1,8 +1,11 @@
 package com.sda.trainingmanagementsystem.Service;
 
 import com.sda.trainingmanagementsystem.Dto.ClassUnitDto;
+import com.sda.trainingmanagementsystem.Dto.ClassesDto;
 import com.sda.trainingmanagementsystem.Dto.CourseDto;
+import com.sda.trainingmanagementsystem.Repository.ClassUnitRepository;
 import com.sda.trainingmanagementsystem.Repository.CourseRepository;
+import com.sda.trainingmanagementsystem.model.ClassUnitModel;
 import com.sda.trainingmanagementsystem.model.CourseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +20,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Autowired
     private CourseRepository courseRepository;
+    private ClassUnitRepository classUnitRepository;
 
     @Override
     public List<CourseDto> getCourses() {
@@ -92,5 +96,26 @@ public class CourseServiceImpl implements CourseService {
     public CourseDto findCourseByClassUnit(ClassUnitDto classUnitDto) {
 
         return null;
+    }
+    public void asociationClassUnitACourse(Long id_ClassUnit, Long id_Course){
+        Optional<CourseModel> courseModelOptional = courseRepository.findById(id_Course);
+        if(courseModelOptional.isPresent()){
+            CourseModel courseModelFind = courseModelOptional.get();
+            courseModelFind.setId(id_ClassUnit);
+            courseRepository.save(courseModelFind);
+
+        }
+
+    }
+    public void asociationClassUnitAtCourse(Long id_ClassUnit, Long id_Course){
+        Optional<ClassUnitModel> classUnitModelOptional = classUnitRepository.findById(id_ClassUnit);
+        if(classUnitModelOptional.isPresent()){
+            ClassUnitModel classUnitModelFind = classUnitModelOptional.get();
+            CourseModel courseModel = new CourseModel();
+           courseModel.setId(classUnitModelFind.getId());
+           courseRepository.save(courseModel);
+
+        }
+
     }
 }

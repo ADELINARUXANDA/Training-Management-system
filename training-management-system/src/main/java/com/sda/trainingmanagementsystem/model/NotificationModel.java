@@ -20,7 +20,7 @@ public class NotificationModel {
     @OneToMany
     private List<ClassesModel> classes = new ArrayList<>();
     @OneToMany
-    private List<UserNotificationsModel> notificationsArrayList = new ArrayList<>();
+    private List<UserNotificationsModel> notificationsArrayList = new ArrayList<>();//???
     private String subject;
     private String contents;
 
