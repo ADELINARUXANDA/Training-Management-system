@@ -8,7 +8,7 @@ import java.util.List;
 public interface CourseService {
     List<CourseDto> getCourses();
     CourseDto findCourse(Long id);
-    void deleteCourse(Long id);
+    String deleteCourse(Long id);
     void updateCourse(CourseDto courseDto);
     void addCourse(CourseDto courseDto);
     CourseDto findCourseByName(String name);

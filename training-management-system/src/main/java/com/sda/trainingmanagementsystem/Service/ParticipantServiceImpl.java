@@ -1,7 +1,6 @@
 package com.sda.trainingmanagementsystem.Service;
 
 import com.sda.trainingmanagementsystem.Dto.ParticipantRegistrationDto;
-import com.sda.trainingmanagementsystem.Dto.UserDto;
 import com.sda.trainingmanagementsystem.Repository.ParticipantRegistrationRepository;
 import com.sda.trainingmanagementsystem.model.ParticipantRegistrationModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,8 +44,9 @@ public class ParticipantServiceImpl implements ParticipantService {
     }
 
     @Override
-    public void deleteParticipant(Long id) {
+    public String deleteParticipant(Long id) {
 participantRegistrationRepository.deleteById(id);
+        return null;
     }
 
     @Override

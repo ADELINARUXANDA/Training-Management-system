@@ -9,7 +9,7 @@ public interface NotificationService {
 
     List<NotificationDto> getNotifications();
     NotificationDto findNotificationbyId(Long id);
-    void deleteNotification(Long id);
+    String deleteNotification(Long id);
     void updateNotification(NotificationDto notificationDto);
     void addNotification(NotificationDto notificationDto);
     UserDto findNotificationByRead(NotificationDto notificationDto);
