@@ -2,7 +2,10 @@ package com.sda.trainingmanagementsystem.Service;
 
 import com.sda.trainingmanagementsystem.Dto.ClassUnitDto;
 import com.sda.trainingmanagementsystem.Repository.ClassUnitRepository;
+import com.sda.trainingmanagementsystem.Repository.ClassesRepository;
 import com.sda.trainingmanagementsystem.model.ClassUnitModel;
+import com.sda.trainingmanagementsystem.model.ClassesModel;
+import com.sda.trainingmanagementsystem.model.CourseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +17,8 @@ import java.util.Optional;
 public class ClassUnitServiceImpl implements ClassUnitService{
 @Autowired
 private ClassUnitRepository classUnitRepository;
+@Autowired
+private ClassesRepository classesRepository;
     @Override
     public List<ClassUnitModel> findClassesUnit() {
         List<ClassUnitModel> classUnitModelsList = classUnitRepository.findAll();
@@ -69,4 +74,20 @@ private ClassUnitRepository classUnitRepository;
         classUnitRepository.save(classUnitModel);
 
     }
-}
+
+    public void asociationClassAtClassUnit(Long id_ClassUnit, Long id_class){
+        Optional<ClassUnitModel> classUnitModelOptional = classUnitRepository.findById(id_ClassUnit);
+        if (classUnitModelOptional.isPresent()) {
+            ClassUnitModel classUnitModelFind = classUnitModelOptional.get();
+            Optional<ClassesModel> classesModelOptional = classesRepository.findById(id_class);
+            if(classesModelOptional.isPresent()){
+                ClassesModel classesModelFind = classesModelOptional.get();
+                classUnitModelFind.getClassesArrayList().add(classesModelFind);
+            }
+            }
+        }
+
+
+
+
+    }

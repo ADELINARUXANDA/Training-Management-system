@@ -13,4 +13,5 @@ public interface CourseService {
     void addCourse(CourseDto courseDto);
     CourseDto findCourseByName(String name);
     CourseDto findCourseByClassUnit(ClassUnitDto classUnitDto);
+    public void asociationClassUnitACourse(Long id_ClassUnit, Long id_Course);
 }

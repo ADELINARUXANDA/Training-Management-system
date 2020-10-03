@@ -51,4 +51,11 @@ public class CourseController {
         courseService.updateCourse(courseDto);
         return new ResponseEntity(HttpStatus.OK);
     }
+
+    @PutMapping("asociationClassUnitACourse/{id_ClassUnit,id_Course }")
+    public ResponseEntity asociationClassUnitACourse(Long id_ClassUnit, Long id_Course){
+        courseService.asociationClassUnitACourse(id_ClassUnit, id_Course);
+        return new ResponseEntity(HttpStatus.OK);
+
+    }
 }

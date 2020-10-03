@@ -3,7 +3,9 @@ package com.sda.trainingmanagementsystem.Service;
 
 import com.sda.trainingmanagementsystem.Dto.ClassesDto;
 import com.sda.trainingmanagementsystem.Repository.ClassesRepository;
+import com.sda.trainingmanagementsystem.model.ClassUnitModel;
 import com.sda.trainingmanagementsystem.model.ClassesModel;
+import com.sda.trainingmanagementsystem.model.CourseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ClassesServiceImolmpl implements ClassesService{
+public class ClassesServicelmpl implements ClassesService{
 
     @Autowired
     private ClassesRepository classesRepository;
@@ -76,4 +78,6 @@ public class ClassesServiceImolmpl implements ClassesService{
         classesRepository.save(classesModel);
 
     }
+
+
 }

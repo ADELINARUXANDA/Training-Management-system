@@ -11,4 +11,5 @@ public interface ClassUnitService  {
     String deleteClassUnit(Long id);
     void updateClassUnit(ClassUnitDto classUnitDto);
     void addClassUnit(ClassUnitDto classUnitDto);
+    public void asociationClassAtClassUnit(Long id_ClassUnit, Long id_class);
 }

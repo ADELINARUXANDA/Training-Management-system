@@ -100,22 +100,17 @@ public class CourseServiceImpl implements CourseService {
     public void asociationClassUnitACourse(Long id_ClassUnit, Long id_Course){
         Optional<CourseModel> courseModelOptional = courseRepository.findById(id_Course);
         if(courseModelOptional.isPresent()){
-            CourseModel courseModelFind = courseModelOptional.get();
-            courseModelFind.setId(id_ClassUnit);
-            courseRepository.save(courseModelFind);
-
+            CourseModel courseModelFind  = courseModelOptional.get();
+            Optional<ClassUnitModel> classUnitModelOptional = classUnitRepository.findById(id_ClassUnit);
+            if (classUnitModelOptional.isPresent()) {
+                ClassUnitModel classUnitModelFind = classUnitModelOptional.get();
+                courseModelFind.getClassUnits().add(classUnitModelFind);
+                courseRepository.save(courseModelFind);
+            }
         }
 
     }
-    public void asociationClassUnitAtCourse(Long id_ClassUnit, Long id_Course){
-        Optional<ClassUnitModel> classUnitModelOptional = classUnitRepository.findById(id_ClassUnit);
-        if(classUnitModelOptional.isPresent()){
-            ClassUnitModel classUnitModelFind = classUnitModelOptional.get();
-            CourseModel courseModel = new CourseModel();
-           courseModel.setId(classUnitModelFind.getId());
-           courseRepository.save(courseModel);
 
-        }
 
-    }
+
 }

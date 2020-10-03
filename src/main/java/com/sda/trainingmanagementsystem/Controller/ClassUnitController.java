@@ -20,7 +20,7 @@ public class ClassUnitController {
     @Autowired
     private ClassUnitService classUnitService;
 
-    @GetMapping("findClassesUnit")
+    @GetMapping("findClassesUnits")
     public ResponseEntity<List<ClassesDto>> findClassesUnit() {
         List<ClassUnitModel> classUnitDtoList = classUnitService.findClassesUnit();
         return new ResponseEntity(classUnitDtoList, HttpStatus.OK);
@@ -48,6 +48,12 @@ public class ClassUnitController {
     @PutMapping("editClassUnit")
     public ResponseEntity updateClass(@RequestBody ClassUnitDto classUnitDto) {
         classUnitService.updateClassUnit(classUnitDto);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @PutMapping("asociationClassAtClassUnit/{id_ClassUnit,id_class }")
+    public ResponseEntity asociationClassAtClassUnit(Long id_ClassUnit, Long id_class) {
+        classUnitService.asociationClassAtClassUnit(id_ClassUnit, id_class);
         return new ResponseEntity(HttpStatus.OK);
     }
 }
