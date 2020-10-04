@@ -34,7 +34,7 @@ public class CourseController {
     }
 
     @PostMapping("addCourse")
-    public ResponseEntity addClassUnit(@RequestBody CourseDto courseDto) {
+    public ResponseEntity addCourse(@RequestBody CourseDto courseDto) {
         courseService.addCourse(courseDto);
         return new ResponseEntity(HttpStatus.OK);
     }
@@ -47,13 +47,13 @@ public class CourseController {
     }
 
     @PutMapping("editCourse")
-    public ResponseEntity updateClass(@RequestBody CourseDto courseDto) {
+    public ResponseEntity updateCourse(@RequestBody CourseDto courseDto) {
         courseService.updateCourse(courseDto);
         return new ResponseEntity(HttpStatus.OK);
     }
 
     @PutMapping("asociationClassUnitACourse/{id_ClassUnit,id_Course }")
-    public ResponseEntity asociationClassUnitACourse(Long id_ClassUnit, Long id_Course){
+    public ResponseEntity asociationClassUnitACourse(@PathVariable("id_ClassUnit") Long id_ClassUnit, @PathVariable("id_Course") Long id_Course){
         courseService.asociationClassUnitACourse(id_ClassUnit, id_Course);
         return new ResponseEntity(HttpStatus.OK);
 
