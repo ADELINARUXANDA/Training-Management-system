@@ -51,7 +51,7 @@ public class ClassUnitController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @PutMapping("asociationClassAtClassUnit/{id_ClassUnit,id_class }")
+    @PutMapping("asociationClassAtClassUnit/{id_ClassUnit}/{id_class }")
     public ResponseEntity asociationClassAtClassUnit(Long id_ClassUnit, Long id_class) {
         classUnitService.asociationClassAtClassUnit(id_ClassUnit, id_class);
         return new ResponseEntity(HttpStatus.OK);

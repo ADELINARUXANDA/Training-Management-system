@@ -52,7 +52,7 @@ public class CourseController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @PutMapping("asociationClassUnitACourse/{id_ClassUnit,id_Course }")
+    @PutMapping("asociationClassUnitACourse/{id_ClassUnit}/{id_Course }")
     public ResponseEntity asociationClassUnitACourse(@PathVariable("id_ClassUnit") Long id_ClassUnit, @PathVariable("id_Course") Long id_Course){
         courseService.asociationClassUnitACourse(id_ClassUnit, id_Course);
         return new ResponseEntity(HttpStatus.OK);
